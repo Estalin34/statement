@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#210d17" />
+    <meta
+      name="description"
+      content="Una carta especial para Juliana, escrita con cariño y desde el corazón."
+    />
+
+    <title>Una pregunta para Juliana ❤️</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+
+  <body>
+    <div class="fondo-luz luz-uno"></div>
+    <div class="fondo-luz luz-dos"></div>
+    <div class="estrellas" aria-hidden="true"></div>
+    <div class="particulas" id="particulas" aria-hidden="true"></div>
+
+    <main class="contenedor">
+      <article class="tarjeta">
+        <div class="borde-interior" aria-hidden="true"></div>
+
+        <header class="encabezado">
+          <p class="etiqueta">
+            <span class="punto"></span>
+            ALGUIEN MUY ESPECIAL
+          </p>
+
+          <div class="emblema" aria-hidden="true">♡</div>
+
+          <p class="sobrelinea">Hay algo que quiero decirte</p>
+
+          <h1>Esto es para <em>ti, Juliana</em> ❤️</h1>
+
+          <p class="intro">
+            Preparé esta pequeña sorpresa pensando en ti. Quería encontrar una
+            forma bonita de expresarte lo que siento, porque hay personas que
+            llegan a tu vida y poco a poco comienzan a ocupar un lugar especial
+            en tu corazón.
+          </p>
+
+          <div class="musica-romantica">
+            <p>🎶 Una canción especial para ti ❤️</p>
+
+            <iframe
+              id="musica"
+              width="300"
+              height="170"
+              src="https://www.youtube.com/embed/4yplFPHnX48?autoplay=0&loop=1&playlist=4yplFPHnX48"
+              title="Canción especial para Juliana"
+              allow="autoplay; encrypted-media"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </header>
+
+        <div class="linea-decorativa"><span>✦</span></div>
+
+        <!-- Primera escena -->
+        <section id="inicio" class="escena">
+          <div class="ramo" aria-hidden="true">
+            <span class="rosa rosa-uno">🌹</span>
+            <span class="rosa rosa-dos">🌹</span>
+            <span class="rosa rosa-tres">🌹</span>
+            <span class="brillo brillo-uno">✧</span>
+            <span class="brillo brillo-dos">✦</span>
+            <span class="brillo brillo-tres">✧</span>
+          </div>
+
+          <p class="frase">
+            A veces, alguien llega a tu vida sin imaginar que terminará
+            regalándote sonrisas y despertando sentimientos muy bonitos.
+          </p>
+
+          <button id="boton" class="boton principal" type="button">
+            Abrir mi sorpresa <span aria-hidden="true">↗</span>
+          </button>
+
+          <p class="microtexto">Toca el botón cuando estés lista ✨</p>
+        </section>
+
+        <!-- La carta -->
+        <section id="carta" class="escena oculto" aria-live="polite">
+          <div class="icono-carta" aria-hidden="true">💌</div>
+
+          <p class="sobrelinea">Unas palabras desde el corazón</p>
+          <h2>Para ti, Juliana</h2>
+
+          <div class="papel">
+            <p id="textoCarta"></p>
+
+            <p class="firma-carta">Con mucho cariño, para ti <span>♥</span></p>
+          </div>
+
+          <button id="botonPregunta" class="boton principal" type="button">
+            Quiero preguntarte algo <span aria-hidden="true">→</span>
+          </button>
+        </section>
+
+        <!-- La pregunta -->
+        <section id="pregunta" class="escena oculto" aria-live="polite">
+          <div class="corazon-grande" aria-hidden="true">♡</div>
+
+          <p class="sobrelinea">Lo que quería preguntarte</p>
+
+          <h2>¿Y si escribimos una historia juntos?</h2>
+
+          <p class="texto-pregunta">
+            Juliana, me hace mucha ilusión seguir conociéndote, compartir
+            momentos contigo, hacerte sonreír, apoyarte en tus sueños y estar
+            presente en los pequeños detalles que hacen bonita la vida. No
+            espero que tengamos una historia perfecta. Quiero que, si algún día
+            construimos algo juntos, sea con sinceridad, respeto, confianza y
+            mucho cariño. Quiero demostrarte con hechos lo que siento por ti y
+            que podamos disfrutar cada etapa sin apresurarnos.
+          </p>
+
+          <p class="pregunta-final">
+            Juliana, ¿quieres ser mi novia? <span>❤️</span>
+          </p>
+
+          <div class="botones-respuesta">
+            <button id="si" class="boton boton-si" type="button">
+              Sí, quiero ❤️
+            </button>
+
+            <button id="pensarlo" class="boton boton-pensar" type="button">
+              Quiero pensarlo 💛
+            </button>
+          </div>
+
+          <p id="respuesta" role="status" aria-live="polite"></p>
+        </section>
+
+        <footer class="pie">
+          <span>Hecho con cariño, especialmente para Juliana</span>
+          <span class="mini-corazon" aria-hidden="true">♥</span>
+        </footer>
+      </article>
+
+      <p class="nota-final">
+        Un detalle pequeño, con un sentimiento enorme. ❤️
+      </p>
+    </main>
+
+    <div id="celebracion" aria-hidden="true"></div>
+
+    <script src="script.js"></script>
+  </body>
+
+  <!-- Música para la sorpresa de Juliana -->
+  <div id="reproductor-musica" class="reproductor-musica">
+    <iframe
+      id="musica"
+      width="0"
+      height="0"
+      src="https://www.youtube.com/embed/4yplFPHnX48?enablejsapi=1&autoplay=0&loop=1&playlist=4yplFPHnX48"
+      title="Música romántica"
+      allow="autoplay; encrypted-media"
+      referrerpolicy="strict-origin-when-cross-origin"
+    ></iframe>
+  </div>
+</html>

@@ -1,0 +1,17 @@
+# Sorpresa romántica ❤️
+
+## Cómo abrirla
+1. Descarga y extrae `sorpresa_romantica.zip`.
+2. Abre la carpeta `sorpresa_romantica`.
+3. Haz doble clic en `index.html` para verla en el navegador.
+
+## Archivos
+- `index.html`: estructura de la página.
+- `estilos.css`: colores, diseño adaptable y animaciones.
+- `script.js`: carta, navegación entre escenas y celebración.
+
+## Personalizar la carta
+Abre `script.js` y edita el texto de la variable `mensajeAmor`.
+Puedes cambiar también los textos directamente en `index.html`.
+
+La página funciona sin instalar nada. Las fuentes personalizadas usan Google Fonts cuando hay conexión; si no, se mostrarán fuentes alternativas.
