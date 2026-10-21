@@ -1,174 +1,265 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#210d17" />
-    <meta
-      name="description"
-      content="Una carta especial para Juliana, escrita con cariño y desde el corazón."
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#14060d" />
+  <title>Para Juliana, con todo mi corazón ❤️</title>
 
-    <title>Una pregunta para Juliana ❤️</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@500;700&family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,500;0,700;1,400;1,600&display=swap"
+    rel="stylesheet"
+  />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Canvas Confetti Library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
-    <link rel="stylesheet" href="estilos.css" />
-  </head>
+  <!-- Hoja de estilos externa -->
+  <link rel="stylesheet" href="estilos.css" />
+</head>
 
-  <body>
-    <div class="fondo-luz luz-uno"></div>
-    <div class="fondo-luz luz-dos"></div>
-    <div class="estrellas" aria-hidden="true"></div>
-    <div class="particulas" id="particulas" aria-hidden="true"></div>
+<body>
+  <!-- Canvas para partículas luminosas y luciérnagas -->
+  <canvas id="canvasFondo"></canvas>
 
-    <main class="contenedor">
-      <article class="tarjeta">
-        <div class="borde-interior" aria-hidden="true"></div>
-
-        <header class="encabezado">
-          <p class="etiqueta">
-            <span class="punto"></span>
-            ALGUIEN MUY ESPECIAL
-          </p>
-
-          <div class="emblema" aria-hidden="true">♡</div>
-
-          <p class="sobrelinea">Hay algo que quiero decirte</p>
-
-          <h1>Esto es para <em>ti, Juliana</em> ❤️</h1>
-
-          <p class="intro">
-            Preparé esta pequeña sorpresa pensando en ti. Quería encontrar una
-            forma bonita de expresarte lo que siento, porque hay personas que
-            llegan a tu vida y poco a poco comienzan a ocupar un lugar especial
-            en tu corazón.
-          </p>
-
-          <div class="musica-romantica">
-            <p>🎶 Una canción especial para ti ❤️</p>
-
-            <iframe
-              id="musica"
-              width="300"
-              height="170"
-              src="https://www.youtube.com/embed/4yplFPHnX48?autoplay=0&loop=1&playlist=4yplFPHnX48"
-              title="Canción especial para Juliana"
-              allow="autoplay; encrypted-media"
-              allowfullscreen
-            ></iframe>
-          </div>
-        </header>
-
-        <div class="linea-decorativa"><span>✦</span></div>
-
-        <!-- Primera escena -->
-        <section id="inicio" class="escena">
-          <div class="ramo" aria-hidden="true">
-            <span class="rosa rosa-uno">🌹</span>
-            <span class="rosa rosa-dos">🌹</span>
-            <span class="rosa rosa-tres">🌹</span>
-            <span class="brillo brillo-uno">✧</span>
-            <span class="brillo brillo-dos">✦</span>
-            <span class="brillo brillo-tres">✧</span>
-          </div>
-
-          <p class="frase">
-            A veces, alguien llega a tu vida sin imaginar que terminará
-            regalándote sonrisas y despertando sentimientos muy bonitos.
-          </p>
-
-          <button id="boton" class="boton principal" type="button">
-            Abrir mi sorpresa <span aria-hidden="true">↗</span>
-          </button>
-
-          <p class="microtexto">Toca el botón cuando estés lista ✨</p>
-        </section>
-
-        <!-- La carta -->
-        <section id="carta" class="escena oculto" aria-live="polite">
-          <div class="icono-carta" aria-hidden="true">💌</div>
-
-          <p class="sobrelinea">Unas palabras desde el corazón</p>
-          <h2>Para ti, Juliana</h2>
-
-          <div class="papel">
-            <p id="textoCarta"></p>
-
-            <p class="firma-carta">Con mucho cariño, para ti <span>♥</span></p>
-          </div>
-
-          <button id="botonPregunta" class="boton principal" type="button">
-            Quiero preguntarte algo <span aria-hidden="true">→</span>
-          </button>
-        </section>
-
-        <!-- La pregunta -->
-        <section id="pregunta" class="escena oculto" aria-live="polite">
-          <div class="corazon-grande" aria-hidden="true">♡</div>
-
-          <p class="sobrelinea">Lo que quería preguntarte</p>
-
-          <h2>¿Y si escribimos una historia juntos?</h2>
-
-          <p class="texto-pregunta">
-            Juliana, me hace mucha ilusión seguir conociéndote, compartir
-            momentos contigo, hacerte sonreír, apoyarte en tus sueños y estar
-            presente en los pequeños detalles que hacen bonita la vida. No
-            espero que tengamos una historia perfecta. Quiero que, si algún día
-            construimos algo juntos, sea con sinceridad, respeto, confianza y
-            mucho cariño. Quiero demostrarte con hechos lo que siento por ti y
-            que podamos disfrutar cada etapa sin apresurarnos.
-          </p>
-
-          <p class="pregunta-final">
-            Juliana, ¿quieres ser mi novia? <span>❤️</span>
-          </p>
-
-          <div class="botones-respuesta">
-            <button id="si" class="boton boton-si" type="button">
-              Sí, quiero ❤️
-            </button>
-
-            <button id="pensarlo" class="boton boton-pensar" type="button">
-              Quiero pensarlo 💛
-            </button>
-          </div>
-
-          <p id="respuesta" role="status" aria-live="polite"></p>
-        </section>
-
-        <footer class="pie">
-          <span>Hecho con cariño, especialmente para Juliana</span>
-          <span class="mini-corazon" aria-hidden="true">♥</span>
-        </footer>
-      </article>
-
-      <p class="nota-final">
-        Un detalle pequeño, con un sentimiento enorme. ❤️
-      </p>
-    </main>
-
-    <div id="celebracion" aria-hidden="true"></div>
-
-    <script src="script.js"></script>
-  </body>
-
-  <!-- Música para la sorpresa de Juliana -->
-  <div id="reproductor-musica" class="reproductor-musica">
-    <iframe
-      id="musica"
-      width="0"
-      height="0"
-      src="https://www.youtube.com/embed/4yplFPHnX48?enablejsapi=1&autoplay=0&loop=1&playlist=4yplFPHnX48"
-      title="Música romántica"
-      allow="autoplay; encrypted-media"
-      referrerpolicy="strict-origin-when-cross-origin"
-    ></iframe>
+  <!-- REPRODUCTOR DE VINILO ELEGANTE -->
+  <div id="reproductorVinilo" class="reproductor-vinilo" title="Haz clic para activar o pausar la música">
+    <div id="discoVinilo" class="disco-vinilo"></div>
+    <div class="info-cancion">
+      <span class="titulo-cancion">Nuestra Melodía</span>
+      <span id="estadoCancion" class="estado-cancion">
+        Tocar para música
+        <span class="onda-sonido">
+          <span class="onda-barra"></span>
+          <span class="onda-barra"></span>
+          <span class="onda-barra"></span>
+        </span>
+      </span>
+    </div>
   </div>
+
+  <main class="app-contenedor">
+    <!-- ESCENA 1: SOBRE 3D INTERACTIVO -->
+    <section id="escenaSobre" class="escena-modulo activa">
+      <div class="bienvenida-intro">
+        <div class="pildora-dorada">
+          <span class="punto-luz"></span>
+          UNA SORPRESA PARA JULIANA
+        </div>
+        <h1 class="titulo-principal">Para la persona más <em>especial</em></h1>
+        <p class="subtexto-romantico">
+          Hay secretos que solo el corazón sabe guardar, y hoy quiero abrirte el mío con cada una de estas palabras.
+        </p>
+      </div>
+
+      <div class="escenario-sobre" id="sobreInteractivo" role="button" aria-label="Abrir sobre de carta">
+        <div class="sobre-cuerpo">
+          <div class="solapa-superior"></div>
+          <div class="solapas-laterales"></div>
+          <div class="hoja-interior">
+            <span>Para Juliana</span>
+            <small>Toca para abrir ✦</small>
+          </div>
+          <div class="sello-cera" id="selloCera"></div>
+        </div>
+      </div>
+
+      <div class="instruccion-toque">
+        <span>✨</span> Toca el sello de cera para abrir tu sorpresa <span>✨</span>
+      </div>
+    </section>
+
+    <!-- ESCENA 2: GALERÍA POLAROID DE RECUERDOS Y RAZONES -->
+    <section id="escenaGaleria" class="escena-modulo">
+      <div class="tarjeta-cristal">
+        <div class="borde-lujoso"></div>
+        <p class="seccion-subtitulo">Capítulo I · Lo que haces nacer en mí</p>
+        <h2 class="seccion-titulo">Razones por las que te quiero</h2>
+        <p class="seccion-desc">
+          Antes de decirte lo que guardo aquí dentro, desliza estas postales pensadas especialmente para ti...
+        </p>
+
+        <div class="contador-polaroids" id="contadorPolaroid">1 de 4 motivos</div>
+
+        <div class="contenedor-polaroid-stack" id="stackPolaroid">
+          <!-- Tarjeta 1: La Sonrisa -->
+          <article class="polaroid-card" style="z-index: 4; transform: rotate(-2deg);">
+            <div class="polaroid-marco-foto">
+              <svg class="polaroid-svg-art" viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#4a152e"/>
+                    <stop offset="100%" stop-color="#190610"/>
+                  </linearGradient>
+                </defs>
+                <rect width="300" height="260" fill="url(#grad1)"/>
+                <circle cx="150" cy="110" r="60" fill="#f3a8bf" opacity="0.25"/>
+                <path d="M 90 140 Q 150 190 210 140" stroke="#ffd98f" stroke-width="4" fill="none" stroke-linecap="round"/>
+                <circle cx="115" cy="100" r="5" fill="#ffd98f"/>
+                <circle cx="185" cy="100" r="5" fill="#ffd98f"/>
+                <text x="150" y="225" font-family="'Cinzel', serif" font-size="12" fill="#f8ccd7" text-anchor="middle" letter-spacing="3">TU LUZ NATURAL</text>
+              </svg>
+            </div>
+            <div class="polaroid-pie">
+              <h4>Tu hermosa sonrisa</h4>
+              <p>Tiene la magia de iluminar hasta mi día más gris con solo mirarte.</p>
+            </div>
+          </article>
+
+          <!-- Tarjeta 2: La Conexión -->
+          <article class="polaroid-card" style="z-index: 3; transform: rotate(3deg);">
+            <div class="polaroid-marco-foto">
+              <svg class="polaroid-svg-art" viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#311025"/>
+                    <stop offset="100%" stop-color="#14040e"/>
+                  </linearGradient>
+                </defs>
+                <rect width="300" height="260" fill="url(#grad2)"/>
+                <path d="M 150 70 C 130 40, 85 45, 85 90 C 85 130, 150 180, 150 180 C 150 180, 215 130, 215 90 C 215 45, 170 40, 150 70 Z" fill="none" stroke="#f3a8bf" stroke-width="2.5" stroke-dasharray="3 3"/>
+                <circle cx="150" cy="120" r="30" fill="#ffd98f" opacity="0.15"/>
+                <text x="150" y="225" font-family="'Cinzel', serif" font-size="12" fill="#ffd98f" text-anchor="middle" letter-spacing="3">NUESTRAS CHARLAS</text>
+              </svg>
+            </div>
+            <div class="polaroid-pie">
+              <h4>Cómo pasa el tiempo contigo</h4>
+              <p>Las horas se sienten como minutos cada vez que nos ponemos a platicar.</p>
+            </div>
+          </article>
+
+          <!-- Tarjeta 3: La Nobleza de Juliana -->
+          <article class="polaroid-card" style="z-index: 2; transform: rotate(-3deg);">
+            <div class="polaroid-marco-foto">
+              <svg class="polaroid-svg-art" viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#3c1328"/>
+                    <stop offset="100%" stop-color="#17060f"/>
+                  </linearGradient>
+                </defs>
+                <rect width="300" height="260" fill="url(#grad3)"/>
+                <text x="150" y="130" font-size="65" text-anchor="middle" fill="#ffd98f">🌻</text>
+                <text x="150" y="225" font-family="'Cinzel', serif" font-size="12" fill="#ffd98f" text-anchor="middle" letter-spacing="3">TU FORMA DE SER</text>
+              </svg>
+            </div>
+            <div class="polaroid-pie">
+              <h4>La pureza de tu corazón</h4>
+              <p>Tu ternura, tu forma de tratar a los demás y tu esencia tan auténtica.</p>
+            </div>
+          </article>
+
+          <!-- Tarjeta 4: El Deseo de Construir Juntos -->
+          <article class="polaroid-card" style="z-index: 1; transform: rotate(1deg);">
+            <div class="polaroid-marco-foto">
+              <svg class="polaroid-svg-art" viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#4d1630"/>
+                    <stop offset="100%" stop-color="#1a0612"/>
+                  </linearGradient>
+                </defs>
+                <rect width="300" height="260" fill="url(#grad4)"/>
+                <path d="M 80 150 Q 150 90 220 150" stroke="#f3a8bf" stroke-width="3" fill="none"/>
+                <text x="150" y="105" font-size="40" text-anchor="middle">✨</text>
+                <text x="150" y="225" font-family="'Cinzel', serif" font-size="12" fill="#ffd98f" text-anchor="middle" letter-spacing="3">UN MISMO CAMINO</text>
+              </svg>
+            </div>
+            <div class="polaroid-pie">
+              <h4>Lo que provocas en mí</h4>
+              <p>Las ganas inmensas de cuidarte, admirarte y soñar en grande a tu lado.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="controles-polaroid">
+          <button class="boton-polaroid-nav" id="btnPolaroidPrev" aria-label="Anterior foto">‹</button>
+          <button class="boton-polaroid-nav" id="btnPolaroidNext" aria-label="Siguiente foto">›</button>
+        </div>
+
+        <button class="boton-romantico-dorado" id="btnIrACarta">
+          Continuar a leer mi carta <span>💌</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ESCENA 3: LA CARTA EN PERGAMINO -->
+    <section id="escenaCarta" class="escena-modulo">
+      <div class="tarjeta-cristal">
+        <div class="borde-lujoso"></div>
+        <p class="seccion-subtitulo">Capítulo II · Palabras sinceras</p>
+        <h2 class="seccion-titulo">Una carta para ti</h2>
+
+        <div class="pergamino-papel">
+          <h3 class="saludo-carta">Mi querida Juliana,</h3>
+          <p id="textoMecanografiado"></p><span class="cursor-escritura" id="cursorTyping"></span>
+          <div class="firma-pergamino">
+            Siempre tuyo,
+            <small>Con todo mi cariño ♥</small>
+          </div>
+        </div>
+
+        <button class="boton-romantico-dorado" id="btnIrAPregunta">
+          Hay una pregunta que quiero hacerte... <span>🌹</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ESCENA 4: LA PREGUNTA FINAL -->
+    <section id="escenaPregunta" class="escena-modulo">
+      <div class="tarjeta-cristal">
+        <div class="borde-lujoso"></div>
+
+        <div class="ramo-animado" aria-hidden="true">
+          <span class="ramo-rosa">🌹</span>
+          <span class="ramo-rosa">🌹</span>
+          <span class="ramo-rosa">🌹</span>
+        </div>
+
+        <p class="seccion-subtitulo">La pregunta más bonita</p>
+        <h2 class="pregunta-revelacion">
+          Juliana...
+          <span>¿Quieres ser mi novia? ❤️</span>
+        </h2>
+
+        <p class="seccion-desc">
+          No te prometo una historia sin días nublados, pero sí te prometo que nunca te faltará una mano firme, un abrazo sincero, respeto infinito y todo mi amor en cada uno de ellos.
+        </p>
+
+        <div class="arena-botones" id="arenaBotones">
+          <button id="btnSi" class="boton-propuesta boton-si-definitivo">
+            ¡Sí, quiero! ❤️
+          </button>
+          <button id="btnPensar" class="boton-propuesta boton-pensar-esquivo">
+            Quiero pensarlo 💛
+          </button>
+        </div>
+
+        <div id="cajaCelebracion" class="caja-celebracion-final">
+          <h3>¡Es el comienzo más hermoso! 🥹💍</h3>
+          <p>
+            Gracias por hacerme la persona más afortunada del mundo, Juliana. Te prometo cuidar tu corazón con la ternura más grande y hacerte sonreír cada día. ¡Te quiero muchísimo! 🌹✨
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="pie-dedicatoria">
+      Diseñado especialmente para <span>Juliana</span> · Con todo mi amor
+    </footer>
+  </main>
+
+  <iframe
+    id="iframeMusica"
+    src=""
+    style="position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none;"
+    allow="autoplay"
+  ></iframe>
+
+  <!-- Script externo -->
+  <script src="script.js"></script>
+</body>
 </html>
